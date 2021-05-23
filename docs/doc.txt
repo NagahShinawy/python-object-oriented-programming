@@ -1,12 +1,33 @@
-oop
+OOP
         : easy to plan, maintain and learn by new programmers
         : indivual part of program don't want to know how other parts internaly work
 
 
-__init__: intialize new object with information and called when creating an object (before any other methods)
+__INIT__: intialize new object with information and called when creating an object (before any other methods)
 
-instance attr: unique for each instance(obj)
+INSTANCE ATTR: unique for each instance(obj)
 
-_attr: to give other developers who work on this class a hint that this attr should be used internal in the class,
+_ATTR: to give other developers who work on this class a hint that this attr should be used internal in the class,
 
 should be access outside the class logic
+
+==================================================================
+NAME MANGLING : In name mangling process any identifier with two leading underscore
+and one trailing underscore is textually replaced with _classname__identifier
+where classname is the name of the current class
+
+class Student:
+    def __init__(self, name):
+        self.__name = name
+
+    def displayName(self):
+        print(self.__name)
+
+s1 = Student("Santhosh")
+s1.displayName()
+
+# Raises an error
+print(s1.__name)   # you cab access attr by < _classname__identifier> ==> s1._STudent__name
+# it is fully secret attr but it just python convention
+
+# python prefix name to < _classname__identifier>
