@@ -4,3 +4,9 @@ oop
 
 
 __init__: intialize new object with information and called when creating an object (before any other methods)
+
+instance attr: unique for each instance(obj)
+
+_attr: to give other developers who work on this class a hint that this attr should be used internal in the class,
+
+should be access outside the class logic
