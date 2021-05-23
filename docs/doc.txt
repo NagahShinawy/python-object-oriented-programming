@@ -1,0 +1,6 @@
+oop
+        : easy to plan, maintain and learn by new programmers
+        : indivual part of program don't want to know how other parts internaly work
+
+
+__init__: intialize new object with information and called when creating an object (before any other methods)
