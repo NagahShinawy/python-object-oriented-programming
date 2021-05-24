@@ -45,3 +45,11 @@ times = Newspaper(name="TIMES")
 times.__class__.__name__:
 1- times.__class__: return <class '__main__.Newspaper'>
 2- .__name__: return class name : Newspaper
+
+
+****************************************************************************************************
+class method: works on class instances not obj instances. shared bettween all obj not just related to specific obj.
+
+
+****************************************************************************************************
+
