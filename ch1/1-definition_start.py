@@ -57,6 +57,14 @@ class Ebook(Book):
         print(self._Book__private)
 
 
+class Newspaper:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
+
 def main():
     # TODO: create instances of the class
     instances = [Book(**book) for book in books]
@@ -99,6 +107,38 @@ def main():
     print(b1._Book__private)   # changed
     eb = Ebook(b4.title, b4.price, b4.author, b4.pages)
     eb.change_private()
+
+    # TODO: use type() to inspect the object type
+    times = Newspaper(name="TIMES")
+    print(times, type(times))
+
+    if isinstance(times, Newspaper):
+        print(f"<{times}> is instance of <{Newspaper.__name__}>")
+
+    if not isinstance(times, Book):
+        print(f"<{times}> is NOT instance of <{Book.__name__}>")
+
+    print(times.__class__)  # <class '__main__.Newspaper'>
+
+    print(type(eb))  # <class '__main__.Ebook'>
+
+    print(isinstance(eb, Ebook))   # True  Ebook is subclass
+
+    print(isinstance(eb, Book))  # True Book is superclass
+
+    # TODO: compare two types together
+
+    print(type(b1) == type(b2))   # True
+    print(type(b1) == type(times))  # False
+    print("#" * 50)
+    # TODO: use isinstance to compare a specific instance to a known type
+
+    print(isinstance(b2, Book))   # True
+    print(isinstance(b2, Ebook))  # False
+    print(isinstance(b2, Newspaper))  # True
+    print(isinstance(b2, object))  # True
+
+    print(b2.__class__.__mro__)   # (<class '__main__.Book'>, <class 'object'>)
 
 
 if __name__ == "__main__":

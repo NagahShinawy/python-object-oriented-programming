@@ -31,3 +31,17 @@ print(s1.__name)   # you cab access attr by < _classname__identifier> ==> s1._ST
 # it is fully secret attr but it just python convention
 
 # python prefix name to < _classname__identifier>
+
+================================================================================
+CHECKING class TYPE uisng :
+1- type(obj)
+2- isinstance(obj, class)
+
+
+Newspaper.__name__: return class name [Newspaper]
+
+****************************************************************************************************
+times = Newspaper(name="TIMES")
+times.__class__.__name__:
+1- times.__class__: return <class '__main__.Newspaper'>
+2- .__name__: return class name : Newspaper
