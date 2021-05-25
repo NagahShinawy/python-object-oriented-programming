@@ -1,5 +1,6 @@
 # Python Object Oriented Programming by Joe Marini course example
 # Using Abstract Base Classes to enforce class constraints
+from abc import ABC, abstractmethod
 
 
 class GraphicShape:
@@ -7,6 +8,8 @@ class GraphicShape:
         super().__init__()
 
     def calcArea(self):
+        # we need to force every shape that inherit to implement calcArea because every shape has area.
+        # implement at subclasses based on shape it self, ex: Square : side * side
         pass
 
 

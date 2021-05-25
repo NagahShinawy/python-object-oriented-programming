@@ -52,4 +52,19 @@ class method: works on class instances not obj instances. shared bettween all ob
 
 
 ****************************************************************************************************
+abstract base class : just allow to inherit from but you can  NOT create instances from it.
+just blueprint for others, or base template.
 
+- abtract methods from abstract base class must to be implemented on subclass
+
+ABC: abstract base class
+
+class Laptop(ABC): means this Laptop class is abstract base class
+
+=====================================================================
+
+The "diamond problem" (sometimes referred as the "deadly diamond of death")
+is the generally used term for an ambiguity that arises
+when two classes B and C inherit from a superclass A, and another class D inherits from both B and C.
+
+__mro__:
