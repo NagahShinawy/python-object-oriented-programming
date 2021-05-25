@@ -68,3 +68,14 @@ is the generally used term for an ambiguity that arises
 when two classes B and C inherit from a superclass A, and another class D inherits from both B and C.
 
 __mro__:
+
+###################################################
+INTERFACES
+Unfortunately, Python doesn't have interfaces
+we can use interface in python using ABC and multiple inheritance
+
+######################################################################################################
+COMPOSITION : has-relationship  ==> Book has Author
+seperate information at different entities(classes)
+
+Book class (HAS) Author associate with it. it is  COMPOSITION
