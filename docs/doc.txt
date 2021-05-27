@@ -79,3 +79,11 @@ COMPOSITION : has-relationship  ==> Book has Author
 seperate information at different entities(classes)
 
 Book class (HAS) Author associate with it. it is  COMPOSITION
+
+=====================================================================
+MAGIC METHODS : methods are associate with every class definition
+- your class override to customize , behavior and integerate with language and work just like python biult in class
+- just like you can teach your objs to act like builtin objs
+CHECK MULTIMEDIA OOP REPO
+
+=====================================================================
