@@ -37,7 +37,7 @@ class Book:
         return self.price <= other.price
 
     def validated_parmas(self, other):
-        if not isinstance(other, Book):
+        if not isinstance(other, Book):  # if other.__class__ is not self.__class__:
             raise ValueError(f"Can not compare '{self.__class__.__name__}' with '{other.__class__.__name__}'")
         return other
 

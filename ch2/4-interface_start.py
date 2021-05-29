@@ -22,8 +22,8 @@ class GraphicShape(ABC):
 
 class Circle(GraphicShape,
              # Unfortunately, Python doesn't have interfaces
-             Jsonify):  # Jsonify just like interface(options). add it when at class you need. add it as needed
-    # we can use interface in python using ABC and multiple inheritance
+             Jsonify):  # Jsonify just like interface(options). add it when as class you need. add it as needed
+    # we can implement interface in python using ABC and multiple inheritance
     def __init__(self, radius):
         self.radius = radius
 

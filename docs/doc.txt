@@ -87,3 +87,49 @@ MAGIC METHODS : methods are associate with every class definition
 CHECK MULTIMEDIA OOP REPO
 
 =====================================================================
+
+RECURSIVE LOOP : __getattribute__
+
+ou seem to be under the impression that your implementation of __getattribute__ is merely a hook,
+that if you provide it Python will call it, and otherwise the interpreter will do its normal magic directly.
+
+That is not correct. When python looks up attributes on instances, __getattribute__ is the main entry for all attribute access,
+and object provides the default implementation.
+Your implementation is thus overriding the original,
+and if your implementation provides no alternative means of returning attributes it fails.
+You cannot use attribute access in that method,
+since all attribute access to the instance (self) is channelled again through type(self).__getattribute__(self, attr).
+
+The best way around this is by calling the overridden original again.
+That's where super(C, self).__getattribute__(attr) comes in;
+you are asking the next class in the class-resolution order to take care of the attribute access for you.
+
+Alternatively, you can call the unbound object.__getattribute__() method directly.
+The C implementation of this method is the final stop for attribute access
+(it has direct access to __dict__ and is thus not bound to the same limitations).
+
+Note that super() returns a proxy object that'll look up whatever method can be found next in the method-resolution ordered base classes.
+If no such method exists, it'll fail with an attribute error.
+It will never call the original method.
+Thus Foo.bar() looking up super(Foo, self).
+bar will either be a base-class implementation or an attribute error, never Foo.bar itself.
+
+
+==========================================================================
+
+A key difference between __getattr__ and __getattribute__ is that __getattr__ is only invoked if the attribute wasn't found the usual ways.
+It's good for implementing a fallback for missing attributes, and is probably the one of two you want.
+
+__getattribute__ is invoked before looking at the actual attributes on the object,
+and so can be tricky to implement correctly. You can end up in infinite recursions very easily.
+
+__getattribute__ is calling getattr()
+__getattr__ is called if __getattribute__ does not exist or the attribute does not exist
+
+
+==================================================================================================
+# TODO: the __call__ method can be used to call the object like a function
+    def __call__(self, title: str, author: str, price: float):
+        self.title = title
+        self.author = author
+        self.price = price
