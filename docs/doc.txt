@@ -142,3 +142,7 @@ It is created using the new @dataclass decorator,
 
 This module provides a decorator and functions for automatically adding generated special methods
 such as __init__() and __repr__() to user-defined classes, mostly exist to hold data.
+
+- field function used to add default value of attributes
+- # use default_factory argument with function that return your default value
+- "The "frozen" parameter makes the class immutable (arttributes will be READ OLNY)
