@@ -15,6 +15,9 @@ class Book:
     def bookinfo(self):
         return f"{self.title}, by {self.author}"
 
+    def json(self):
+        return dict(title=self.title, author=self.author, pages=self.pages, price=self.price)
+
 
 # create some instances
 b1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
@@ -36,3 +39,12 @@ print(b1 == b3)
 b1.title = "Anna Karenina"
 b1.pages = 864
 print(b1.bookinfo())
+
+
+class OnlineBook(Book):
+    pass
+
+
+cleancode = OnlineBook("clean code", "bob", 45, 90.0)
+
+
