@@ -138,7 +138,9 @@ __getattr__ is called if __getattribute__ does not exist or the attribute does n
 ==========================================================================================
 dataclass
 A data class is a class typically containing mainly data, although there aren’t really any restrictions.
-It is created using the new @dataclass decorator,
+- It is created using the new @dataclass decorator,
+- Using data classes to represent data objects
+
 
 This module provides a decorator and functions for automatically adding generated special methods
 such as __init__() and __repr__() to user-defined classes, mostly exist to hold data.

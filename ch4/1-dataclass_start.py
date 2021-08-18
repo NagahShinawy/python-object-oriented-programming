@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Book:
-    title: str  # using type hinting (REQUIRED) for data class[Book] to work
+    title: str  # using type hinting (REQUIRED) for dataclass[Book] to work
     author: str
     pages: int
     __price: float
